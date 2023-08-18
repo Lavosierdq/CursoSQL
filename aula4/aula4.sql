@@ -43,3 +43,5 @@ select * from funcionarios where nome = 'Guilherme'
 union 
 select * from funcionarions where nome = 'isabela'
 
+-- retornando valores de um campo entre datas 
+select data from pedido where data between '2010-04-15' and '2010-04-18';j
