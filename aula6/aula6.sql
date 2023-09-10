@@ -50,6 +50,9 @@ select * from funcionarios order by nome;
 -- ordernar usando dois campos
 select * from funcionarios order by nome,salario;
 
+-- ordernar usando dois  campos e de forma decrescente os dois campos;
+select * from funcionarios order by nome desc,salario desc;
+
 -- ordenar registros da tabela funcionario a partir do nome decrescendo
 select * from funcionarios order by nome desc;
 -- ordernar registros da tabela funcionario a partir do nome de forma crescente
@@ -57,6 +60,24 @@ select * from funcionarios order by nome asc;
 
 -- ------------------------------------------------------------------
 -- comandos de paginação
--- limitar somente com dois  registros
+-- mostrar somente os dois primeiros registros
 select * from funcionarios limit 2;
+ -- mostrar os dois primeiros registros  pulando o primeiro
+select * from funcionarios limit 2 offset 1
+-- pular o primeiro resultado e mostrar os 2 seguintes
+select * from funcionarios limit 1,2;
 
+-- agrupamento de campos para retornar resultado
+select departamento, avg(salario) from funcionarios group by departamento;
+
+-- agrupando com condição utilizando o parametro having
+select departamento , avg(salario) from funcionarios group by departamento having avg(salario) > 1000;
+
+-- outro exemplo de agrupamento, funciona para todos os comandos, sum, min, max, avg, count
+select departamento, count(*) from funcionarios group by departamento;
+
+-- fazendo uma sub query para trazer  resultados do campo departamento
+
+select nome from funcionarios where departamento in (
+  select departamento from funcionarios group by departamento having avg(salario) > 2000
+);
