@@ -42,7 +42,7 @@ select min(salario) from funcionarios where deparatamento = "T.I";
 -- --------------------------------------------------------------
 
 -- retornar somente o campo distinto da tabela sem repetição
-select distinct(departamente) from funcionarios;
+select distinct(departamento) from funcionarios;
 
 -- ordenar registros da tabela funcionarios a partir do nome
 select * from funcionarios order by nome;
