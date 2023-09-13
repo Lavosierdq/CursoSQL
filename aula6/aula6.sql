@@ -32,7 +32,7 @@ select avg(salario) from funcinonarios where departamento = 'T.I';
 select max(salario) from funcionarios;
 
 -- seguindo o exemplo anterior
-select max(salrio) from funcionarios where departamento = 'T.I';
+select max(salario) from funcionarios where departamento = 'T.I';
 
 -- salario minimo(mais baixo) da tabela funcionario;
 select min(salario) from funcionarios;
