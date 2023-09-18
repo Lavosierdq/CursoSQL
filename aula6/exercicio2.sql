@@ -41,7 +41,6 @@ select curso,tipo.tipo from curso where tipo in (
   select codigo from tipo where tipo = 'programaçao'
 );
 
-
 ---------------------------------------------------------------------------------------------
 /*
   3:Utilizando subquery e o parâmetro EXISTS, exiba novamente os nomes dos
@@ -51,6 +50,10 @@ select curso,tipo.tipo from curso where tipo in (
 select curso from curso where  exists(
   select codigo from tipo where tipo  = 'programaçao'
 );
+
+select curso from curso where exists(
+  select codigo from tipo where tipo = 'programacao'
+)
 ---------------------------------------------------------------------------------------------
 /*
   4:Exiba uma lista com os nomes dos instrutores da Softblue e ao lado 
@@ -69,6 +72,10 @@ select instrutor,(select sum(pedido_detalhe.valor) from pedido_detalhe
   where curso.instrutor = instrutor.codigo)
   as total_de_vendas from instrutor;
 
+select instrutor,(select sum(pedido_detalhe.valor)from pedido_detalhe
+  inner join curso on pedido_detalhe.curso = curso.codigo
+  where curso.instrutor = instrutor.codigo
+)as total_vendas from instrutor
   -------------------------------------------------------------------------------------------
 /*
   5:Crie uma visão que exiba os nomes dos alunos e quanto cada um já 
