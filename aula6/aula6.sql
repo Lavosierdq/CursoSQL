@@ -32,7 +32,7 @@ select avg(salario) from funcinonarios where departamento = 'T.I';
 select max(salario) from funcionarios;
 
 -- seguindo o exemplo anterior
-select max(salrio) from funcionarios where departamento = 'T.I';
+select max(salario) from funcionarios where departamento = 'T.I';
 
 -- salario minimo(mais baixo) da tabela funcionario;
 select min(salario) from funcionarios;
@@ -42,7 +42,7 @@ select min(salario) from funcionarios where deparatamento = "T.I";
 -- --------------------------------------------------------------
 
 -- retornar somente o campo distinto da tabela sem repetição
-select distinct(departamente) from funcionarios;
+select distinct(departamento) from funcionarios;
 
 -- ordenar registros da tabela funcionarios a partir do nome
 select * from funcionarios order by nome;
