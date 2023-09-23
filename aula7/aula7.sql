@@ -26,7 +26,7 @@ grant insert on curso_sql.* to 'andre'@'%';
 
 -- dando acesso somente na tabela funcionario usando insert para inserir dados a partir de qualquer ip
 create user 'andre'@'%' indentified by '123456'
-grant insert on curso_sql. funcionario 'andre'@'%';
+grant insert on curso_sql.funcionario 'andre'@'%';
 
 -- -------------------------------------------------------------------
 /* comando revoke para remover acesso
@@ -49,4 +49,3 @@ drop user 'andre'@'localhost'
 select user from mysql.user;
 -- identificando privilégios do usuário no banco
 show grants for 'andre'@'localhost';
-
